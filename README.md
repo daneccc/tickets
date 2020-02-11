@@ -52,24 +52,24 @@ Realiza a deleção de um determinado ticket com _id_ passado como parâmetro
 Lista todos os tickets cadastrados
 
 ```json
-{
-  [
+[
+  {
    "Id":1,
    "Description":"Lâmpada queimada",
    "AuthorName":"Washington",
    "Date":"26/11/2019"
-  ],
-  [
+  },
+  {
    "Id":2,
    "Description":"Pintar parede",
    "AuthorName":"Pedro",
    "Date":"12/12/2019"
-  ],
-  [
+  },
+  {
    "Id":3,
    "Description":"Monitor com defeito",
    "AuthorName":"João",
    "Date":"07/01/2020"
-  ],
-}
+  },
+]
 ```
