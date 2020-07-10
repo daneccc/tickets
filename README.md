@@ -13,6 +13,7 @@ A API deverá ser implementada em ASP.NET Core, utilizando o ORM Entity Framewor
 Para dar início ao desafio, o candidato deve dar um fork no repositório e, ao fim do desenvolvimento, dar acesso ao usuário **_washington@trilogo.com.br_** e ao usuário **_hugo@trilogo.com.br_** ao seu repositório para análise do trabalho.
 
 **Extras**
+
 * Utilização de um segundo ORM (Dapper, por exemplo) para a realização de leituras no banco de dados
 * Implementação de um mecanismo de autorização (uso de JWT, por exemplo) para validar as chamadas aos endpoints
 * Implementação de testes unitários
