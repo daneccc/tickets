@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PTTFsl7lAY+GNh1EhSwHGbyW+DydMJsFg4L6AoDug5eOtiyS5uFcL196nPQj2NRFETXr19OEvHOcjReKnnZV/Q==",
+  "dgSpecHash": "MENDC+JM+oXAo0IrrDO8GaJGdsZS6U9E+Mz6k7gJ6uQXnQuYABpP4Sz7oUdWjJ5r/VpbAdRPXOVYVerlSh9Qlw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danie\\Desktop\\DESAFIO1\\Tickets.API\\Ticket.API.csproj",
+  "projectFilePath": "C:\\Users\\danie\\Desktop\\DESAFIO1\\Tickets.API\\Tickets.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danie\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

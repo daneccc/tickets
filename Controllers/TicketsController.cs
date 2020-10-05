@@ -6,8 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Tickets.API.Models;
 using Tickets.API.Repositories;
 
-namespace Tickets.API.Controllers
-{
+namespace Tickets.API.Controllers {
     [Route("api/tickets")]
     [ApiController]
     public class TicketsController : ControllerBase {
@@ -22,7 +21,6 @@ namespace Tickets.API.Controllers
         // GET: api/tickets
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Ticket>>> GetTickets() {
-            //return await _context.Tickets.ToListAsync();
             var tickets = _ticketRepository.GetTickets();
             return tickets;
         }
@@ -30,7 +28,7 @@ namespace Tickets.API.Controllers
         // GET: api/tickets/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Ticket>> GetTicket(long id) {
-            var ticket = _ticketRepository.Get(id); //await _context.Tickets.FindAsync(id);
+            var ticket = _ticketRepository.Get(id);
 
             if (ticket == null) {
                 return NotFound();
@@ -42,20 +40,13 @@ namespace Tickets.API.Controllers
         // PUT: api/Tickets/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTicket(long id, Ticket ticket) {
-            /*if (id != ticket.Id) {
-                return BadRequest();
-            }*/
-
-            //_context.Entry(ticket).State = EntityState.Modified;
-
             try {
-                _ticketRepository.Update(id, ticket); //await _context.SaveChangesAsync();
+                _ticketRepository.Update(id, ticket);
             }
             catch (DbUpdateConcurrencyException) {
                 if (!TicketExists(id)) {
                     return NotFound();
-                }
-                else {
+                } else {
                     throw;
                 }
             }
