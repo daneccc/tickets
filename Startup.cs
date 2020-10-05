@@ -28,7 +28,7 @@ namespace Tickets.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(opt =>
-               opt.UseInMemoryDatabase("Tickets"));
+               opt.UseSqlServer("Password=123456;Persist Security Info=True;User ID=sa;Initial Catalog=testetickets;Data Source=DESKTOP-AS1PBTC"));
             services.AddControllers();
         }
 
