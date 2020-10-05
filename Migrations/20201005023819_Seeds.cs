@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Tickets.API.Migrations
-{
-    public partial class Seeds : Migration
-    {
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
+namespace Tickets.API.Migrations {
+    public partial class Seeds : Migration {
+        protected override void Up(MigrationBuilder migrationBuilder) {
             migrationBuilder.AlterColumn<string>(
                 name: "Date",
                 table: "Tickets",
@@ -30,7 +27,7 @@ namespace Tickets.API.Migrations
                     { 1L, "Washington", "26/11/2019", "Lâmpada queimada" },
                     { 2L, "Pedro", "12/12/2019", "Pintar parede" },
                     { 3L, "João", "07/01/2020", "Monitor com defeito" },
-                    { 4L, "João2", "07/01/2020222", "Monitor com defeito2" }
+                    { 4L, "João", "07/01/2020", "Monitor com defeito" }
                 });
         }
 

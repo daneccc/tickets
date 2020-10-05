@@ -266,3 +266,4 @@ C:\Users\danie\Desktop\DESAFIO1\Tickets.API\obj\Debug\netcoreapp3.1\Ticket.API.c
 C:\Users\danie\Desktop\DESAFIO1\Tickets.API\obj\Debug\netcoreapp3.1\staticwebassets\Ticket.API.StaticWebAssets.Manifest.cache
 C:\Users\danie\Desktop\DESAFIO1\Tickets.API\obj\Debug\netcoreapp3.1\staticwebassets\Ticket.API.StaticWebAssets.xml
 C:\Users\danie\Desktop\DESAFIO1\Tickets.API\obj\Debug\netcoreapp3.1\Ticket.API.genruntimeconfig.cache
+C:\Users\danie\Desktop\DESAFIO1\Tickets.API\bin\Debug\netcoreapp3.1\Dapper.dll

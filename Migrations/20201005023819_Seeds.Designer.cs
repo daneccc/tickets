@@ -6,14 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tickets.API.Models;
 
-namespace Tickets.API.Migrations
-{
+namespace Tickets.API.Migrations {
     [DbContext(typeof(DataContext))]
     [Migration("20201005023819_Seeds")]
-    partial class Seeds
-    {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
+    partial class Seeds {
+        protected override void BuildTargetModel(ModelBuilder modelBuilder) {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.8")
@@ -68,9 +65,9 @@ namespace Tickets.API.Migrations
                         new
                         {
                             Id = 4L,
-                            AuthorName = "João2",
-                            Date = "07/01/2020222",
-                            Description = "Monitor com defeito2"
+                            AuthorName = "João",
+                            Date = "07/01/2020",
+                            Description = "Monitor com defeito"
                         });
                 });
 #pragma warning restore 612, 618

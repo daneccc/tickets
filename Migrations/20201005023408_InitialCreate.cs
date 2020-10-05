@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Tickets.API.Migrations
-{
-    public partial class InitialCreate : Migration
-    {
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
+namespace Tickets.API.Migrations {
+    public partial class InitialCreate : Migration {
+        protected override void Up(MigrationBuilder migrationBuilder) {
             migrationBuilder.CreateTable(
                 name: "Tickets",
                 columns: table => new

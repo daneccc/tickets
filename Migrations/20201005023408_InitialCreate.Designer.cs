@@ -6,14 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tickets.API.Models;
 
-namespace Tickets.API.Migrations
-{
+namespace Tickets.API.Migrations {
     [DbContext(typeof(DataContext))]
     [Migration("20201005023408_InitialCreate")]
-    partial class InitialCreate
-    {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
+    partial class InitialCreate {
+        protected override void BuildTargetModel(ModelBuilder modelBuilder) {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.8")

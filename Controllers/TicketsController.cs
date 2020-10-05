@@ -1,40 +1,38 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Tickets.API.Models;
+using Tickets.API.Repositories;
 
 namespace Tickets.API.Controllers
 {
     [Route("api/tickets")]
     [ApiController]
-    public class TicketsController : ControllerBase
-    {
+    public class TicketsController : ControllerBase {
         private readonly DataContext _context;
+        ITicketRepository _ticketRepository;
 
-        public TicketsController(DataContext context)
-        {
+        public TicketsController(DataContext context, ITicketRepository ticketRepository) {
             _context = context;
+            _ticketRepository = ticketRepository;
         }
 
-        // GET: api/Tickets
+        // GET: api/tickets
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Ticket>>> GetTickets()
-        {
-            return await _context.Tickets.ToListAsync();
+        public async Task<ActionResult<IEnumerable<Ticket>>> GetTickets() {
+            //return await _context.Tickets.ToListAsync();
+            var tickets = _ticketRepository.GetTickets();
+            return tickets;
         }
 
-        // GET: api/Tickets/5
+        // GET: api/tickets/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Ticket>> GetTicket(long id)
-        {
-            var ticket = await _context.Tickets.FindAsync(id);
+        public async Task<ActionResult<Ticket>> GetTicket(long id) {
+            var ticket = _ticketRepository.Get(id); //await _context.Tickets.FindAsync(id);
 
-            if (ticket == null)
-            {
+            if (ticket == null) {
                 return NotFound();
             }
 
@@ -42,30 +40,22 @@ namespace Tickets.API.Controllers
         }
 
         // PUT: api/Tickets/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTicket(long id, Ticket ticket)
-        {
-            if (id != ticket.Id)
-            {
+        public async Task<IActionResult> PutTicket(long id, Ticket ticket) {
+            /*if (id != ticket.Id) {
                 return BadRequest();
-            }
+            }*/
 
-            _context.Entry(ticket).State = EntityState.Modified;
+            //_context.Entry(ticket).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
+            try {
+                _ticketRepository.Update(id, ticket); //await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TicketExists(id))
-                {
+            catch (DbUpdateConcurrencyException) {
+                if (!TicketExists(id)) {
                     return NotFound();
                 }
-                else
-                {
+                else {
                     throw;
                 }
             }
@@ -74,11 +64,8 @@ namespace Tickets.API.Controllers
         }
 
         // POST: api/Tickets
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Ticket>> PostTicket(Ticket ticket)
-        {
+        public async Task<ActionResult<Ticket>> PostTicket(Ticket ticket) {
             _context.Tickets.Add(ticket);
             await _context.SaveChangesAsync();
 
@@ -87,13 +74,10 @@ namespace Tickets.API.Controllers
 
         // DELETE: api/Tickets/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Ticket>> DeleteTicket(long id)
-        {
+        public async Task<ActionResult<Ticket>> DeleteTicket(long id) {
             var ticket = await _context.Tickets.FindAsync(id);
             if (ticket == null)
-            {
                 return NotFound();
-            }
 
             _context.Tickets.Remove(ticket);
             await _context.SaveChangesAsync();
@@ -101,8 +85,7 @@ namespace Tickets.API.Controllers
             return ticket;
         }
 
-        private bool TicketExists(long id)
-        {
+        private bool TicketExists(long id) {
             return _context.Tickets.Any(e => e.Id == id);
         }
     }
